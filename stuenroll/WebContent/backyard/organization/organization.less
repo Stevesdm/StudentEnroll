@@ -1,0 +1,178 @@
+body {
+    background-color: #E7E7E7;
+}
+.main-container {
+    background-color: #fff;
+    margin: 15/16rem;
+    padding: 15/16rem;
+    .tab-list {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #EBEEF7;
+        .tab-item {
+            float: left;
+            height: 36/16rem;
+            line-height: 36/16rem;
+            text-align: center;
+            padding-left: 20/16rem;
+            padding-right: 20/16rem;
+            letter-spacing: 1/16rem;
+            font-size: 14/16rem;
+            cursor: pointer;
+        }
+        .tab-active {
+            color: #fff;
+            background-color: #02A0E9;
+        }
+    }
+    .tab-container {
+        //overflow: hidden;
+        .tab-content {
+            display: none;
+            //overflow: hidden;
+            .operation-list {
+                margin: 0;
+                padding: 0;
+                height: 48/16rem;
+                position: relative;
+                .operation-item {
+                    float: left;
+                    height: 48/16rem;
+                    line-height: 48/16rem;
+                    text-align: center;
+                    letter-spacing: 1/16rem;
+                    font-size: 14/16rem;
+                    padding-left: 10/16rem;
+                    padding-right: 10/16rem;
+                    cursor: pointer;
+                    //display:none;
+                    //overflow: hidden;
+                    .menu{
+                        position: absolute;
+                        width: 1618/16rem;
+                        height: 262/16rem;
+                        background-color: rgba(240,240,240,1);
+                        cursor: default;
+                        left: 0;
+                        //overflow: hidden;  
+                        .menu-title{
+                            width: 1470/16rem;
+                            font-size: 15/16rem;
+                            font-weight: bold;
+                            letter-spacing: 1/16rem;
+                            color: #333;
+                            text-align: left;
+                            margin-left: 30/16rem;
+                            margin-top: 15/16rem;
+                            border-bottom: dashed 1/16rem #CCCCCC;
+                        }
+                        .content-title{
+                            float: left;
+                            font-size: 14/16rem;
+                            font-weight: bold;
+                            letter-spacing: 1/16rem;
+                            color: #333;
+                            text-align: left;
+                            margin-left: 30/16rem;
+                            margin-top: 15/16rem;
+                            margin-right: 33/16rem;
+                        }
+                        .content-container{
+                            float: left;
+                            .content-list{
+                                margin-top: 15/16rem;
+                                .content-item{
+                                    text-align: left;
+                                    margin-bottom: 12/16rem;
+                                    label{
+                                        font-size: 14/16rem;
+                                        margin-right: 8/16rem;
+                                        letter-spacing: 1/16rem;
+                                        //margin-left: 40/16rem;
+                                    }
+                                    .input{
+                                        width: 200/16rem;
+                                        height: 32/16rem;
+                                        margin-right: 40/16rem;
+                                        //outline: none;
+                                        border: solid 1/16rem rgba(204,204,204,1);
+                                        border-radius: 3/16rem;
+                                        padding-left: 15/16rem;
+                                        font-size: 14/16rem;
+                                        letter-spacing: 1/16rem;
+                                    }
+                                    #organization-address{
+                                        width: 534/16rem;
+                                    }
+                                    .btn{
+                                        width: 119/16rem;
+                                        height: 30/16rem;
+                                        background-color: #F4494E;
+                                        outline: none;
+                                        border: none;
+                                        border-radius: 3/16rem;
+                                        font-size: 14/16rem;
+                                        font-weight: bold;
+                                        letter-spacing: 1/16rem;
+                                        color: #fff;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .inactive{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .content-active {
+            display: block;
+        }
+        .page-list {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #EBEEF7;
+            margin-top: 15/16rem;
+            .page-item {
+                height: 40/16rem;
+                font-size: 14/16rem;
+                line-height: 40/16rem;
+            }
+            .page-info {
+                float: left;
+                margin-left: 15/16rem;
+                span {
+                    margin-left: 5/15rem;
+                    margin-right: 5/15rem;
+                }
+            }
+            .page-operation {
+                float: right;
+                margin-right: 10/16rem;
+                a {
+                    cursor: pointer;
+                    padding-left: 5/16rem;
+                    padding-right: 5/16rem;
+                    &:hover {
+                        color: #ff6700;
+                    }
+                }
+                .page-active {
+                    color: red;
+                    font-weight: 600;
+                }
+                .page-disable {
+                    color: #B9B9B9;
+                    cursor: default;
+                    &:hover {
+                        color: #B9B9B9;
+                    }
+                }
+            }
+        }
+    }
+}

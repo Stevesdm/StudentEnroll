@@ -1,0 +1,219 @@
+.classList{
+    padding: 15/16rem;
+    background-color: #fff;
+    .tab-label{
+        height: 36/16rem;
+        line-height: 36/16rem;
+        .tab-list{
+            height: inherit;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: #EBEEF7;
+            .tab-item{
+                float: left;
+                padding-left: 20/16rem;
+                padding-right: 20/16rem;
+                font-size: 14/16rem;
+                letter-spacing: 1/16rem;
+                cursor: pointer;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -webkit-user-select: none;
+            }
+            .tab-active{
+                background-color: #02A0E9;
+                color: #fff;
+            }
+        }
+    }
+    .class-container{
+        .hide-display{
+            display: none;   
+        }
+        .show-display{
+            display: block;
+        }
+        .class-content{
+                .operation-list{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                height: 48/16rem;
+                .select-class{
+                    margin: 0;
+                    padding: 0;
+                    height: 120/16rem;
+                    .operation-item{
+                        float: left;
+                        padding-left: 10/16rem;
+                        padding-right: 10/16rem;
+                        font-size: 14/16rem;
+                        line-height: 28/16rem;
+                        margin-top: 10/16rem;
+                        margin-bottom: 10/16rem;
+                        letter-spacing: 1/16rem;
+                        cursor: pointer;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        -webkit-user-select: none;
+                        .menu{
+                            display: none;
+                            cursor: default;
+                            left: 0;
+                            top: 38/16rem;
+                            background-color: #f0f0f0;
+                            color: #333;
+                            width: 100%;
+                            border: solid #e0e0e0 1/16rem;
+                            box-shadow: 0 3/16rem 4/16rem rgba(0,0,0,0.1);
+                            padding: 20/16rem;
+                            position: absolute;
+                            z-index: 50;
+                            .value {
+                                float: left;
+                            }
+                            .arrowhead {
+                                float: right;
+                                font-size: 11/16rem;
+                            }
+                            .menu-title {
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                padding-bottom: 10/16rem;
+                                font-size: 15/16rem;
+                                letter-spacing: 1/16rem;
+                                border-bottom: #ccc dashed 1/16rem;
+                            }
+                            dl {
+                                margin-top: 20/16rem;
+                                margin-bottom: 20/16rem;
+                                height: 100/16rem;
+                                dt {
+                                    float: left;
+                                    letter-spacing: 1/16rem;
+                                    height: 32/16rem;
+                                    line-height: 32/16rem;
+                                    font-weight: 600;
+                                    margin-right: 20/16rem;
+                                }
+                                dd {
+                                    float: left;
+                                    margin-left: 0;
+                                    height: 60/16rem;                              
+                                    .condition-list {
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style: none;
+                                        width: 700/16rem;
+                                        min-width: 700/16rem;
+                                        height: 60/16rem;
+                                        clear: both;
+                                        .condition-list-item{
+                                            float: left;
+                                            width: 350/16rem;
+                                            
+                                            .label {
+                                                float: left;
+                                                width: 90/16rem;
+                                                letter-spacing: 1/16rem;
+                                                height: 32/16rem;
+                                                line-height: 32/16rem;
+                                                text-align: right;
+                                                padding-right: 5/16rem;
+                                                margin-bottom: 25/16rem;
+                                            }
+                                            .condition {
+                                                float: left;
+                                                margin-right: 40/16rem;
+                                                margin-bottom: auto;
+                                                .keyword {
+                                                    width: 200/16rem;
+                                                    height: 32/16rem;
+                                                    padding-left: 10/16rem;
+                                                    padding-right: 10/16rem;
+                                                    margin: 0;
+                                                    border: solid #ccc 1/16rem;
+                                                    outline: none;
+                                                    letter-spacing: 1/16rem;
+                                                }
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+                                    .menu-btn {
+                                        display: block;
+                                        width: 120/16rem;
+                                        height: 32/16rem;
+                                        margin-bottom: 25/16rem;
+                                        background-color: #F4494E;
+                                        border: none;
+                                        color: #fff;
+                                        outline: none;
+                                        border-radius: 3/16rem;
+                                        letter-spacing: 1/16rem;
+                                        font-size: 14/16rem;
+                                        font-weight: 600;
+                                        &:active {
+                                            background-color: #CD0C12;
+                                        }
+                                    }
+                                }
+                            }
+                        }               
+                    }
+                }
+                
+            }
+            .data-content{
+                .page-list{
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: #EBEEF7;
+                    margin-top: 15/16rem;
+                    .page-item{
+                        height: 40/16rem;
+                        font-size: 14/16rem;
+                        line-height: 40/16rem;
+                    }
+                    .page-info{
+                        float: left;
+                        margin-left: 15/16rem;
+                        span{
+                            margin-left: 5/16rem;
+                            margin-right: 5/16rem;
+                        }
+                    }
+                    .page-operation{
+                        float: right;
+                        margin-right: 10/16rem;
+                        a{
+                            cursor: pointer;
+                            padding-left: 5/16rem;
+                            padding-right: 5/16rem;
+                            &:hover{
+                                color: #ff6700;
+                            }
+                            
+                        }
+                        .page-active{
+                            color: red;
+                            font-weight: 600;
+                        }
+                        .page-disable{
+                            color: #B9B9B9;
+                            cursor: default;
+                            &:hover{
+                                color: #B9B9B9;
+                            }
+                        }
+                    }
+                }
+            }    
+        }
+        
+    }
+}

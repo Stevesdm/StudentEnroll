@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../../js/plugin/toastr.css" />
+<link rel="stylesheet" type="text/css" href="../../font/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="enroll.css" />
+<link rel="stylesheet" type="text/css" href="../../js/plugin/dropdown.css" />
+</head>
+
+<body>
+	<div class="main-container">
+		<dl class="tab-list no-select">
+			<dt class="tab-item tab-active" data-index="全部学员">全部学员</dt>
+			<dt class="tab-item" data-index="已分班">已分班</dt>
+			<dt class="tab-item" data-index="未分班">未分班</dt>
+			<dt class="tab-item" data-index="中退学员">中退学员</dt>
+		</dl>
+		<div class="tab-container">
+			<div class="tab-content content-active" data-index="全部学员">
+				<dl class="operation-list">
+					<dt class="operation-item" name="search">
+						查询
+						<div class="operation-ex-item " id="searchItem">
+							<div class="title">学生信息检索</div>
+							<div class="left-title">条件查询</div>
+							<div class="item-list">
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名: <input name="name" pattern="^[\u4e00-\u9fa5]{2,15}$" />
+									</dt>
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别:
+										<div class="dropdown " name="sex">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">男</li>
+												<li class="dropdown-item">女</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										培训专业:
+										<div class="dropdown " name="profession">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">软件工程</li>
+												<li class="dropdown-item">数字媒体</li>
+											</ul>
+										</div>
+									</dt>
+								</dl>
+								<dl class="content">
+									<dt>
+										身份证号: <input name="pid" type="text" />
+									</dt>
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学历:
+										<div class="dropdown " name="education">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">本科</li>
+												<li class="dropdown-item">硕士</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										班级编号: <input name="classId" type="text" pattern="^[a-zA-Z\u4e00-\u9fa5]{4-20}$" />
+									</dt>
+								</dl>
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年届: <input name="year" type="text" pattern="^[1-9]\d{3}$" />
+									</dt>
+									<dt>
+										培训机构:
+										<div class="dropdown" name="organization">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">鱼塘</li>
+												<li class="dropdown-item">养鸡场</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										学生状态:
+										<div class="dropdown" name="studentstate">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">死亡</li>
+												<li class="dropdown-item">离职</li>
+											</ul>
+										</div>
+
+									</dt>
+								</dl>
+								<dl class="content">
+									<dt>
+										<button name="search" type="submit">查询</button>
+									</dt>
+									<dt>
+										<button name="cancle">清除</button>
+									</dt>
+								</dl>
+							</div>
+
+						</div>
+					</dt>
+					<dt class="operation-item" name="add">
+						添加
+						<div class="operation-ex-item" id="addItem">
+
+							<div class="title">学生信息添加</div>
+							<div class="left-title">学生基本信息</div>
+							<div class="item-list">
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名: <input name="name" pattern="^[\u4e00-\u9fa5]{2,15}$" required="required" />
+									</dt>
+									<dt>
+										身份证号: <input name="pid" required="required" />
+									</dt>
+									<dt>
+										毕业日期: <input name="graduate_date" required="required" />
+									</dt>
+									<dt>
+										健康状况:
+										<div class="dropdown "name="healthy">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">健康</li>
+												<li class="dropdown-item">残疾</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										现居住地: <input pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{5,50}$" required="required" name="resident_address"/>
+									</dt>
+									<dt>
+										移动电话: <input pattern="^[1-9]\d{10}$" required="required" name="tel"/>
+									</dt>
+									<dt>
+										培训机构:
+										<div class="dropdown "name="organization">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+
+											</ul>
+										</div>
+									</dt>
+
+								</dl>
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别:
+										<div class="dropdown "name="sex">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">男</li>
+												<li class="dropdown-item">女</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										毕业学校: <input pattern="^[\u4e00-\u9fa5]{4,30}$" required="required" name="graduate_school"/>
+									</dt>
+									<dt>
+										毕业学历:
+										<div class="dropdown "name="education">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">本科</li>
+												<li class="dropdown-item">硕士</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+									<dt>
+										政治面貌:
+										<div class="dropdown " name="politics">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">共青团员</li>
+												<li class="dropdown-item">中共党员</li>
+												<li class="dropdown-item">民革党员</li>
+												<li class="dropdown-item">民盟盟员</li>
+												<li class="dropdown-item">民建会员</li>
+												<li class="dropdown-item">民进会员</li>
+												<li class="dropdown-item">农工党党员</li>
+												<li class="dropdown-item">致公党党员</li>
+												<li class="dropdown-item">九三学社社员</li>
+												<li class="dropdown-item">台盟盟员</li>
+												<li class="dropdown-item">无党派民主人士</li>
+												<li class="dropdown-item">群众</li>
+											</ul>
+
+										</div>
+									</dt>
+									<dt>
+										家庭住址: <input pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{5,50}$" name="home_address" required="required" />
+									</dt>
+									<dt>
+										家庭电话: <input pattern="^[1-9]\d{10}$" required="required" name="home_tel" />
+									</dt>
+									<dt>
+										申报专业:
+										<div class="dropdown " name="profession">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">见习膜法师</li>
+												<li class="dropdown-item">混吃等死咸鱼</li>
+											</ul>
+										</div>
+									</dt>
+
+								</dl>
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;民族:
+										<div class="dropdown " name="nation">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">汉族</li>
+												<li class="dropdown-item">其他特权民族</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										毕业年份:
+										<div class="dropdown " name="graduate_year">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">2013</li>
+												<li class="dropdown-item">2012</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										所学专业:
+										<div class="dropdown " name="major">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">哲学</li>
+												<li class="dropdown-item">经济学</li>
+												<li class="dropdown-item">法学</li>
+												<li class="dropdown-item">文学</li>
+												<li class="dropdown-item">历史学</li>
+												<li class="dropdown-item">理学</li>
+												<li class="dropdown-item">工学</li>
+												<li class="dropdown-item">农学</li>
+												<li class="dropdown-item">医学</li>
+												<li class="dropdown-item">军事学</li>
+												<li class="dropdown-item">管理学</li>
+											</ul>
+
+										</div>
+									</dt>
+									<dt>
+									<dt>
+										出生日期: <input required="required" name="birthday"/>
+									</dt>
+									<dt>
+										户籍地址: <input name="permanent_address" pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{5,50}$" required="required" />
+									</dt>
+									<dt>
+										电子邮箱: <input name="email" type="email" required="required" />
+									</dt>
+									<dt>
+										培训地点:
+										<div class="dropdown "name="place">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">沈阳</li>
+												<li class="dropdown-item">大连</li>
+												<li class="dropdown-item">鞍山</li>
+											</ul>
+										</div>
+									</dt>
+
+								</dl>
+
+								<dl class="content" >
+									<dt>
+										<button type="submit" name="save">保存</button>
+									</dt>
+									<dt>
+										<button name="cancle">清除</button>
+									</dt>
+								</dl>
+
+							</div>
+
+						</div>
+					</dt>
+					<dt class="operation-item" name="modify">
+						修改
+						<div class="operation-ex-item" id="modifyItem">
+														<div class="title">学生信息到修改</div>
+							<div class="left-title">学生基本信息</div>
+							<div class="item-list">
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名: <input name="name" pattern="^[\u4e00-\u9fa5]{2,15}$" required="required" />
+									</dt>
+									<dt>
+										身份证号: <input name="pid" required="required" />
+									</dt>
+									<dt>
+										毕业日期: <input name="graduate_date" required="required" />
+									</dt>
+									<dt>
+										健康状况:
+										<div class="dropdown "name="healthy">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">健康</li>
+												<li class="dropdown-item">残疾</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										现居住地: <input pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{5,50}$" required="required" name="resident_address"/>
+									</dt>
+									<dt>
+										移动电话: <input pattern="^[1-9]\d{10}$" required="required" name="tel"/>
+									</dt>
+									<dt>
+										培训机构:
+										<div class="dropdown "name="organization">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+
+											</ul>
+										</div>
+									</dt>
+
+								</dl>
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别:
+										<div class="dropdown "name="sex">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">男</li>
+												<li class="dropdown-item">女</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										毕业学校: <input pattern="^[\u4e00-\u9fa5]{4,30}$" required="required" name="graduate_school"/>
+									</dt>
+									<dt>
+										毕业学历:
+										<div class="dropdown "name="education">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">本科</li>
+												<li class="dropdown-item">硕士</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+									<dt>
+										政治面貌:
+										<div class="dropdown " name="politics">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">共青团员</li>
+												<li class="dropdown-item">中共党员</li>
+												<li class="dropdown-item">民革党员</li>
+												<li class="dropdown-item">民盟盟员</li>
+												<li class="dropdown-item">民建会员</li>
+												<li class="dropdown-item">民进会员</li>
+												<li class="dropdown-item">农工党党员</li>
+												<li class="dropdown-item">致公党党员</li>
+												<li class="dropdown-item">九三学社社员</li>
+												<li class="dropdown-item">台盟盟员</li>
+												<li class="dropdown-item">无党派民主人士</li>
+												<li class="dropdown-item">群众</li>
+											</ul>
+
+										</div>
+									</dt>
+									<dt>
+										家庭住址: <input pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{5,50}$" name="home_address" required="required" />
+									</dt>
+									<dt>
+										家庭电话: <input pattern="^[1-9]\d{10}$" required="required" name="home_tel" />
+									</dt>
+									<dt>
+										申报专业:
+										<div class="dropdown " name="profession">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">见习膜法师</li>
+												<li class="dropdown-item">混吃等死咸鱼</li>
+											</ul>
+										</div>
+									</dt>
+
+								</dl>
+
+								<dl class="content">
+									<dt>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;民族:
+										<div class="dropdown " name="nation">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">汉族</li>
+												<li class="dropdown-item">其他特权民族</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										毕业年份:
+										<div class="dropdown " name="graduate_year">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">2013</li>
+												<li class="dropdown-item">2012</li>
+											</ul>
+										</div>
+									</dt>
+									<dt>
+										所学专业:
+										<div class="dropdown " name="major">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">哲学</li>
+												<li class="dropdown-item">经济学</li>
+												<li class="dropdown-item">法学</li>
+												<li class="dropdown-item">文学</li>
+												<li class="dropdown-item">历史学</li>
+												<li class="dropdown-item">理学</li>
+												<li class="dropdown-item">工学</li>
+												<li class="dropdown-item">农学</li>
+												<li class="dropdown-item">医学</li>
+												<li class="dropdown-item">军事学</li>
+												<li class="dropdown-item">管理学</li>
+											</ul>
+
+										</div>
+									</dt>
+									<dt>
+									<dt>
+										出生日期: <input required="required" name="birthday"/>
+									</dt>
+									<dt>
+										户籍地址: <input name="permanent_address" pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{5,50}$" required="required" />
+									</dt>
+									<dt>
+										电子邮箱: <input name="email" type="email" required="required" />
+									</dt>
+									<dt>
+										培训地点:
+										<div class="dropdown "name="place">
+											<span class="value">- 选择 -</span> <i class="iconfont arrowhead">&#xe610;</i>
+											<ul class="dropdown-list">
+												<li class="dropdown-item">沈阳</li>
+												<li class="dropdown-item">大连</li>
+												<li class="dropdown-item">鞍山</li>
+											</ul>
+										</div>
+									</dt>
+
+								</dl>
+
+								<dl class="content" >
+									<dt>
+										<button type="submit" name="change">修改</button>
+									</dt>
+									<dt>
+										<button name="cancle">清除</button>
+									</dt>
+								</dl>
+
+							</div>
+							
+							
+						</div>
+					</dt>
+					<dt class="operation-item" name="delete">
+						删除
+						<div class="operation-ex-item" id="deleteItem"></div>
+					</dt>
+					<dt class="operation-item" name="distribute">
+						学员分班
+						<div class="operation-ex-item" id="distributeItem"></div>
+					</dt>
+					<dt class="operation-item" name="cancleDistribute">
+						取消分班
+						<div class="operation-ex-item" id="cancleDistributeItem"></div>
+					</dt>
+				</dl>
+				<table class="data-table">
+					<tr>
+						<th></th>
+						<th>序号</th>
+						<th>姓名</th>
+						<th>身份证号</th>
+						<th>电话</th>
+						<th>培训机构</th>
+						<th>申报专业</th>
+						<th>班级名称</th>
+						<th>年届</th>
+						<th>状态</th>
+					</tr>
+
+				</table>
+				<dl class="page-list no-select">
+					<dt class="page-item page-info">
+						总计<span id="totalRows">1</span>条记录，<span id="currentPage">1</span>/<span id="totalPages"></span>页
+					</dt>
+					<dt class="page-item page-operation">
+						<a name="prevBtn">上一页</a> <a class="page-active">1</a> <a>2</a> <a>3</a> <a class="page-disable">4</a> <a class="page-disable">5</a> <a name="nextBtn">下一页</a>
+					</dt>
+				</dl>
+			</div>
+			<div class="tab-content" data-index="已分班">2</div>
+			<div class="tab-content" data-index="未分班">3</div>
+			<div class="tab-content" data-index="中退学员">4</div>
+		</div>
+	</div>
+	<script src="../../js/jquery-2.1.4.min.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../../js/plugin/toastr.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../../js/pid.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../../js/permission.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../../js/tab.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../../js/plugin/dropdown.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="enroll.js" type="text/javascript" charset="UTF-8"></script>
+</body>
+
+</html>

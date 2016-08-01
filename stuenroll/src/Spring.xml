@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Dao类 -->
+	<bean id="userDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.UserDao"></bean>
+	<bean id="userLogDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.UserLogDao"></bean>
+	<bean id="enrollDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.EnrollDao"></bean>
+	<bean id="archiveDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.ArchiveDao"></bean>
+	<bean id="permissionDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.PermissionDao"></bean>
+	<bean id="professionDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.ProfessionDao"></bean>
+	<bean id="student_StateDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.Student_StateDao"></bean>
+	<bean id="organizationDao" class="cn.gov.hrss.ln.stuenroll.db.mariadb.OrganizationDao"></bean>
+
+	<!-- MQ类 -->
+	<bean id="producer" class="cn.gov.hrss.ln.stuenroll.rocketmq.Producer" init-method="start" destroy-method="stop">
+		<property name="namesrvAddr" value="127.0.0.1:9876"></property>
+		<property name="groupName" value="stuenroll"></property>
+		<property name="instanceName" value="producer_1"></property>
+	</bean>
+
+	<!-- 业务类 -->
+	<bean id="userService" class="cn.gov.hrss.ln.stuenroll.user.UserService">
+		<property name="i_UserDao" ref="userDao"></property>
+		<property name="i_UserLogDao" ref="userLogDao"></property>
+		<property name="i_Producer" ref="producer"></property>
+	</bean>
+	<bean id="welcomeService" class="cn.gov.hrss.ln.stuenroll.welcome.WelcomeService">
+		<property name="i_EnrollDao" ref="enrollDao"></property>
+		<property name="i_ArchiveDao" ref="archiveDao"></property>
+	</bean>
+	<bean id="permissionService" class="cn.gov.hrss.ln.stuenroll.permission.PermissionService">
+		<property name="i_PermissionDao" ref="permissionDao"></property>
+	</bean>
+	<bean id="enrollService" class="cn.gov.hrss.ln.stuenroll.enroll.EnrollService">
+		<property name="i_EnrollDao" ref="enrollDao"></property>
+		<property name="i_ProfessionDao" ref="professionDao"></property>
+		<property name="i_Student_StateDao" ref="student_StateDao"></property>
+		<property name="i_OrganizationDao" ref="organizationDao"></property>
+	</bean>
+	<bean id="organizationService" class="cn.gov.hrss.ln.stuenroll.organization.OrganizationService">
+		<property name="i_OrganizationDao" ref="organizationDao"></property>
+	</bean>
+
+
+	<!-- 网络类 -->
+	<bean id="testController" class="cn.gov.hrss.ln.stuenroll.test.TestController"></bean>
+	<bean id="userController" class="cn.gov.hrss.ln.stuenroll.user.UserController">
+		<property name="i_UserService" ref="userService"></property>
+		<property name="i_PermissionService" ref="permissionService"></property>
+	</bean>
+	<bean id="welcomeController" class="cn.gov.hrss.ln.stuenroll.welcome.WelcomeController">
+		<property name="i_WelcomeService" ref="welcomeService"></property>
+	</bean>
+	<bean id="enrollController" class="cn.gov.hrss.ln.stuenroll.enroll.EnrollController">
+		<property name="i_EnrollService" ref="enrollService"></property>
+		<property name="rowsInPage" value="35"></property>
+
+	</bean>
+	<bean id="organizationController" class="cn.gov.hrss.ln.stuenroll.organization.OrganizationController">
+		<property name="i_OrganizationService" ref="organizationService"></property>
+		<property name="rowsInPage" value="35"></property>
+	</bean>
+
+</beans>

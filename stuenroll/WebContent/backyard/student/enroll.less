@@ -1,0 +1,291 @@
+body {
+    background-color: #E7E7E7;
+}
+.main-container {
+    background-color: #fff;
+    margin: 15/16rem;
+    padding: 15/16rem;
+    .tab-list {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #EBEEF7;
+        .tab-item {
+            float: left;
+            height: 36/16rem;
+            line-height: 36/16rem;
+            text-align: center;
+            padding-left: 20/16rem;
+            padding-right: 20/16rem;
+            letter-spacing: 1/16rem;
+            font-size: 14/16rem;
+            cursor: pointer;
+        }
+        .tab-active {
+            color: #fff;
+            background-color: #02A0E9;
+        }
+    }
+    .tab-container {
+        overflow: hidden;
+        .tab-content {
+            display: none;
+            .operation-list {
+                margin: 0;
+                padding: 0;
+                height: 48/16rem;
+                .operation-item {
+                    float: left;
+                    height: 48/16rem;
+                    line-height: 48/16rem;
+                    text-align: center;
+                    letter-spacing: 1/16rem;
+                    font-size: 14/16rem;
+                    padding-left: 10/16rem;
+                    padding-right: 10/16rem;
+                    cursor: pointer;
+                    //                  暂时取消隐藏!
+                    //                  display:none;
+                    .operation-ex-item {
+                        position: absolute; //                      background-color: #F0F0F0;
+                        background-color: #f0f0f0;
+                        left: 30/16rem;
+                        top: 100/16rem;
+                        width: 1603/16rem;
+                        border-radius: 10/16rem;
+                        cursor: auto;
+                        display: none;
+                    }
+                    #searchItem {
+                        height: 250/16rem;
+                        .title {
+                            font-size: 15/16rem;
+                            font-weight: 600;
+                            position: absolute;
+                            left: 18/16rem;
+                            top: 10/16rem;
+                            width: 1550/16rem;
+                            text-align: left;
+                            margin: 0;
+                            padding-left: 15/16rem;
+                            border-bottom: dashed #CCCCCC;
+                            border-bottom-width: 2/16rem;
+                        }
+                        .left-title {
+                            font-size: 15/16rem;
+                            font-weight: 600;
+                            position: absolute;
+                            left: 18/16rem;
+                            top: 60/16rem;
+                            text-align: left;
+                            margin: 0;
+                            padding-left: 15/16rem;
+                        }
+                        .item-list {
+                            position: absolute;
+                            top: 60/16rem;
+                            left: 150/16rem;
+                            text-align: left;
+                            .content {
+                                float: left;
+                                width: 340/16rem;
+                                input {
+                                    font-size: 15/16rem;
+                                    height: 34/16rem;
+                                    width: 250/16rem;
+                                    border-radius: 5/16rem;
+                                    box-shadow: none;
+                                    border: solid #CCCCCC;
+                                    border-width: 1/16rem;
+                                }
+                                button {
+                                    height: 34/16rem;
+                                    width: 120/16rem;
+                                    background-color: #F4494E;
+                                    color: white;
+                                    border-radius: 5/16rem;
+                                    font-size: 15/16rem;
+                                    box-shadow: none;
+                                    border: none;
+                                }
+                                .dropdown {
+                                    width: 250/16rem;
+                                }
+
+                            }
+                        }
+                    }
+                    #modifyItem {
+                        height: 450/16rem;
+                        .title {
+                            font-size: 15/16rem;
+                            font-weight: 600;
+                            position: absolute;
+                            left: 18/16rem;
+                            top: 10/16rem;
+                            width: 1550/16rem;
+                            text-align: left;
+                            margin: 0;
+                            padding-left: 15/16rem;
+                            border-bottom: dashed #CCCCCC;
+                            border-bottom-width: 2/16rem;
+                        }
+                        .left-title {
+                            font-size: 15/16rem;
+                            font-weight: 600;
+                            position: absolute;
+                            left: 18/16rem;
+                            top: 60/16rem;
+                            text-align: left;
+                            margin: 0;
+                            padding-left: 15/16rem;
+                        }
+                        .item-list {
+                            position: absolute;
+                            top: 60/16rem;
+                            left: 150/16rem;
+                            text-align: left;
+                            .content {
+                                float: left;
+                                width: 340/16rem;
+                                input {
+                                    font-size: 15/16rem;
+                                    height: 34/16rem;
+                                    width: 250/16rem;
+                                    border-radius: 5/16rem;
+                                    box-shadow: none;
+                                    border: solid #CCCCCC;
+                                    border-width: 1/16rem;
+                                }
+                                button {
+                                    height: 34/16rem;
+                                    width: 120/16rem;
+                                    background-color: #F4494E;
+                                    color: white;
+                                    border-radius: 5/16rem;
+                                    font-size: 15/16rem;
+                                    box-shadow: none;
+                                    border: none;
+                                }
+                                .dropdown {
+                                    width: 250/16rem;
+                                }
+                            }
+                        }
+                    }
+                    
+                                        #addItem {
+                        height: 450/16rem;
+                        .title {
+                            font-size: 15/16rem;
+                            font-weight: 600;
+                            position: absolute;
+                            left: 18/16rem;
+                            top: 10/16rem;
+                            width: 1550/16rem;
+                            text-align: left;
+                            margin: 0;
+                            padding-left: 15/16rem;
+                            border-bottom: dashed #CCCCCC;
+                            border-bottom-width: 2/16rem;
+                        }
+                        .left-title {
+                            font-size: 15/16rem;
+                            font-weight: 600;
+                            position: absolute;
+                            left: 18/16rem;
+                            top: 60/16rem;
+                            text-align: left;
+                            margin: 0;
+                            padding-left: 15/16rem;
+                        }
+                        .item-list {
+                            position: absolute;
+                            top: 60/16rem;
+                            left: 150/16rem;
+                            text-align: left;
+                            .content {
+                                float: left;
+                                width: 340/16rem;
+                                input {
+                                    font-size: 15/16rem;
+                                    height: 34/16rem;
+                                    width: 250/16rem;
+                                    border-radius: 5/16rem;
+                                    box-shadow: none;
+                                    border: solid #CCCCCC;
+                                    border-width: 1/16rem;
+                                }
+                                button {
+                                    height: 34/16rem;
+                                    width: 120/16rem;
+                                    background-color: #F4494E;
+                                    color: white;
+                                    border-radius: 5/16rem;
+                                    font-size: 15/16rem;
+                                    box-shadow: none;
+                                    border: none;
+                                }
+                                .dropdown {
+                                    width: 250/16rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content-active {
+            display: block;
+        }
+        .page-list {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #EBEEF7;
+            margin-top: 15/16rem;
+            .page-item {
+                height: 40/16rem;
+                font-size: 14/16rem;
+                line-height: 40/16rem;
+            }
+            .page-info {
+                float: left;
+                margin-left: 15/16rem;
+                span {
+                    margin-left: 5/15rem;
+                    margin-right: 5/15rem;
+                }
+            }
+            .page-operation {
+                float: right;
+                margin-right: 10/16rem;
+                a {
+                    cursor: pointer;
+                    padding-left: 5/16rem;
+                    padding-right: 5/16rem;
+                    &:hover {
+                        color: #ff6700;
+                    }
+                }
+                .page-active {
+                    color: red;
+                    font-weight: 600;
+                }
+                .page-disable {
+                    color: #B9B9B9;
+                    cursor: default;
+                    &:hover {
+                        color: #B9B9B9;
+                    }
+                }
+            }
+        }
+    }
+    .error {
+        color: red !important;
+    }
+    .hidden {
+        display: none;
+    }
+}

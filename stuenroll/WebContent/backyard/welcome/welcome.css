@@ -1,0 +1,456 @@
+body {
+  background-color: #e7e7e7;
+}
+.main-container {
+  height: inherit;
+  padding: 0.9375rem;
+}
+.main-container .chart-container {
+  height: inherit;
+  width: 70%;
+  float: left;
+  padding-right: 0.9375rem;
+}
+.main-container .chart-container .annual-statistics {
+  background-color: #fff;
+  height: 41.9375rem;
+  margin-bottom: 0.9375rem;
+  overflow: hidden;
+}
+.main-container .chart-container .annual-statistics .title {
+  color: #555;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  margin-left: 1.25rem;
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+}
+.main-container .chart-container .annual-statistics .step-list {
+  margin: 0 0 0 1.25rem;
+  padding: 0;
+  height: 2.25rem;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item {
+  float: left;
+  text-align: center;
+  color: #fff;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  height: 1.875rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1.875rem;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item:nth-child(1) {
+  background-color: #2AB0DB;
+  border-top-left-radius: 1.125rem;
+  border-bottom-left-radius: 1.125rem;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item:nth-child(2) {
+  background-color: #40B8DF;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item:nth-child(3) {
+  background-color: #56C0E3;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item:nth-child(4) {
+  background-color: #6CC8E7;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item:nth-child(5) {
+  background-color: #82D0EB;
+}
+.main-container .chart-container .annual-statistics .step-list .step-item:nth-child(6) {
+  background-color: #98D8EF;
+}
+.main-container .chart-container .annual-statistics .step-list .step-active {
+  height: 2.25rem;
+  line-height: 2.25rem;
+  margin-top: -0.1875rem;
+}
+.main-container .chart-container .annual-statistics .statistics {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  margin-top: 1.25rem;
+  height: 33.125rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 0 0.9375rem;
+  padding: 0;
+  overflow: hidden;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 .analysis-item {
+  width: 17.1875rem;
+  margin-right: 0.9375rem;
+  background-color: #fff;
+  height: 21.875rem;
+  flex-grow: 1;
+  color: #555;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  padding-left: 0.75rem;
+  padding-top: 0.75rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 .analysis-item:last-child {
+  margin-right: 0;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 .analysis-item .profession {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10;
+  height: 21.25rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 .analysis-item .city {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10;
+  height: 21.25rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 .analysis-item .education {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10;
+  height: 21.25rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-4 .analysis-item .classCount {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10;
+  height: 21.25rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-2 {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.main-container .chart-container .organiztion-statistics .statistics-2 .other-item {
+  width:70.3125rem;
+  background-color: #fff;
+  height: 23.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  overflow:hidden;
+}
+.main-container .chart-container .organiztion-statistics .statistics-2 .other-item .flow {
+  height: 24rem;
+  flex-grow: 2;
+  margin-right: 0.9375rem;
+}
+.main-container .chart-container .organiztion-statistics .statistics-2 .other-item .work {
+  height: 24rem;
+  flex-grow: 1;
+}
+.main-container .info-container {
+  height: inherit;
+  width: 30%;
+  background-color: #fff;
+  float: left;
+}
+.main-container .info-container .monthly-analysis {
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+.main-container .info-container .monthly-analysis .header {
+  height: 1.875rem;
+}
+.main-container .info-container .monthly-analysis .header .header-title {
+  float: left;
+  display: inline-block;
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  margin-right: 0.625rem;
+  color: #555;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .monthly-analysis .header .change {
+  float: left;
+  display: inline-block;
+  color: #555;
+  font-size: 1rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+.main-container .info-container .monthly-analysis .header .change .iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+}
+.main-container .info-container .monthly-analysis .header .sum {
+  float: right;
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  color: #00ADF0;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .monthly-analysis .analysis-title {
+  overflow: hidden;
+  margin-top: 0.625rem;
+}
+.main-container .info-container .monthly-analysis .analysis-title .organization {
+  float: left;
+  font-size: 0.875rem;
+  color: #555555;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .monthly-analysis .analysis-title .data {
+  float: right;
+  font-size: 0.875rem;
+  color: #555555;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .monthly-analysis .analysis-list {
+  clear: both;
+  float: none;
+  list-style: none;
+  margin: 15 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #EDEDED;
+  border-radius: 6.25rem;
+}
+.main-container .info-container .monthly-analysis .analysis-list .data-1 {
+  float: left;
+  height: 0.625rem;
+  background-color: #73D59C;
+  width: 6.25rem;
+}
+.main-container .info-container .monthly-analysis .analysis-list .data-2 {
+  float: left;
+  height: 0.625rem;
+  background-color: #1FC7FE;
+  width: 4.375rem;
+}
+.main-container .info-container .monthly-analysis .analysis-list .data-3 {
+  float: left;
+  height: 0.625rem;
+  background-color: #FFCB5B;
+  width: 3.125rem;
+}
+.main-container .info-container .monthly-analysis .analysis-list .data-4 {
+  float: left;
+  height: 0.625rem;
+  background-color: #EC5483;
+  width: 1.25rem;
+}
+.main-container .info-container .monthly-analysis .lengend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-container .info-container .monthly-analysis .lengend-list .item {
+  float: left;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  color: #555555;
+}
+.main-container .info-container .monthly-analysis .lengend-list .square-1 {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #73D59C;
+}
+.main-container .info-container .monthly-analysis .lengend-list .square-2 {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #1FC7FE;
+}
+.main-container .info-container .monthly-analysis .lengend-list .square-3 {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #FFCB5B;
+}
+.main-container .info-container .monthly-analysis .lengend-list .square-4 {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #EC5483;
+}
+.main-container .info-container .section-title {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2.5rem;
+  line-height: 1.875rem;
+  border-bottom: solid #eaeaea 0.0625rem;
+  color: #555;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .analysis-list {
+  margin: 0;
+  padding-left: 0;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  list-style: none;
+}
+.main-container .info-container .analysis-list .analysis {
+  height: 4.0625rem;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-arrow {
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+  color: #888;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-arrow .iconfont {
+  font-size: 0.625rem;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-square {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  text-align: center;
+  display: inline-block;
+  margin-left: 0.1875rem;
+  font-size: 1.375rem;
+  color: #FFFFFF;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-green {
+  background-color: #73D59C;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-blue {
+  background-color: #1FC7FE;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-yellow {
+  background-color: #FFCB5B;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-red {
+  background-color: #EC5483;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-info {
+  margin-left: 1.25rem;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-specifics {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555555;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-desc {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #888;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .analysis-list .analysis .analysis-entry .analysis-number {
+  position: absolute;
+  top: 0;
+  right: 0.625rem;
+  line-height: 4.0625rem;
+  font-size: 1.125rem;
+  color: #555555;
+  letter-spacing: 0.0625rem;
+}
+.main-container .info-container .clock .date {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2.875rem;
+  line-height: 2.875rem;
+  background-color: #334F53;
+  color: #f5f5f5;
+  font-size: 1.125rem;
+  letter-spacing: 0.0625rem;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+  padding-left: 1.25rem;
+}
+.main-container .info-container .clock .time {
+  background-color: #1FBBA6;
+  font-size: 3.125rem;
+  color: #f5f5f5;
+  text-align: center;
+  border-bottom-left-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+}
+.main-container .info-container .message-container .message-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.main-container .info-container .message-container .message-list .message {
+  margin-top: 1.5625rem;
+}
+.main-container .info-container .message-container .message-list .message .message-entry {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main-container .info-container .message-container .message-list .message .message-entry .message-photo {
+  vertical-align: middle;
+}
+.main-container .info-container .message-container .message-list .message .message-entry .message-content {
+  margin-left: 1.25rem;
+}
+.main-container .info-container .message-container .message-list .message .message-entry .message-content .message-header {
+  overflow: hidden;
+}
+.main-container .info-container .message-container .message-list .message .message-entry .message-content .message-header .message-title {
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.0625rem;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+.main-container .info-container .message-container .message-list .message .message-entry .message-content .message-header .message-datetime {
+  float: right;
+  letter-spacing: 0.0625rem;
+  font-size: 0.875rem;
+}
+.main-container .info-container .message-container .message-list .message .message-entry .message-content .message-desc {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.5rem;
+  height: 3.75rem;
+  line-height: 1.25rem;
+  overflow: hidden;
+  color: #999;
+  letter-spacing: 0.0625rem;
+  clear: both;
+}
+/*# sourceMappingURL=welcome.css.map */

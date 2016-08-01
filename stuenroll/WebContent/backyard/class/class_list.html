@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../js/plugin/toastr.css" />
+		<link rel="stylesheet" type="text/css" href="../../font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="class_list.css" />
+		<link rel="stylesheet" type="text/css" href="../../js/plugin/dropdown.css" />
+	</head>
+	<body>
+		<div class="classList">
+			<div class="tab-label">
+				<dl class="tab-list">
+					<dt class="tab-item tab-active" data-index="班级列表" >班级列表</dt>
+					<dt class="tab-item" data-index="未归档" >未归档 </dt>
+					<dt class="tab-item" data-index="已归档" >已归档</dt>
+					<dt class="tab-item" data-index="电话回访" >电话回访</dt>
+				</dl>
+			</div>
+			
+			<div class="class-container">
+				<div class="class-content hide-display show-display" name="class-content" data-index="班级列表">
+					<div class="operation-list">
+						<dl class="select-class" >
+							<dt class="operation-item" data-operation = "查询">查询
+								<div id="searchClass" class="menu">
+									<h4 class="menu-title">班级信息查询</h4>
+									<dl>
+										<dt class="">班级信息</dt>
+										<dd>
+											<ul class="condition-list">
+												<div class="condition-list-item">
+													<li class="label">班级编号：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item"><span id="classInfoId">1</span></li>
+															</ul>
+														</div>
+													</li>
+												</div>
+											
+												<div class="condition-list-item">
+													<li class="label">年届：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">机构名称：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">男</li>
+																<li class="dropdown-item">女</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">专业：</li>
+													<li class="condition">
+														<div name="education" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">专科</li>
+																<li class="dropdown-item">本科</li>
+																<li class="dropdown-item">研究生</li>
+																<li class="dropdown-item">博士</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												
+											</ul>
+										</dd>
+										<dd>
+											<input type="button" class="menu-btn" value="查询" ng-click="searchEnroll()" />
+											<input type="button" class="menu-btn" value="清除" ng-click="clearMenu($event)" />
+										</dd>
+									</dl>
+								</div>
+							</dt>
+							<dt class="operation-item">添加
+								<div id="addClass" class="menu">
+									<h4 class="menu-title">班级信息添加</h4>
+									<dl>
+										<dt class="">班级信息</dt>
+										<dd>
+											<ul class="condition-list">
+												<div class="condition-list-item">
+													<li class="label">班级编号：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+											
+												<div class="condition-list-item">
+													<li class="label">年届：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">机构名称：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">男</li>
+																<li class="dropdown-item">女</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">专业：</li>
+													<li class="condition">
+														<div name="education" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">专科</li>
+																<li class="dropdown-item">本科</li>
+																<li class="dropdown-item">研究生</li>
+																<li class="dropdown-item">博士</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												
+											</ul>
+										</dd>
+										<dd>
+											<input type="button" class="menu-btn" value="保存" ng-click="searchEnroll()" />
+											<input type="button" class="menu-btn" value="清除" ng-click="clearMenu($event)" />
+										</dd>
+									</dl>
+								</div>
+							</dt>
+							<dt class="operation-item">修改
+								<div id="addClass" class="menu hide-display">
+									<h4 class="menu-title">班级信息修改</h4>
+									<dl>
+										<dt class="">班级信息</dt>
+										<dd>
+											<ul class="condition-list">
+												<div class="condition-list-item">
+													<li class="label">班级编号：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+											
+												<div class="condition-list-item">
+													<li class="label">年届：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">机构名称：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">男</li>
+																<li class="dropdown-item">女</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">专业：</li>
+													<li class="condition">
+														<div name="education" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">专科</li>
+																<li class="dropdown-item">本科</li>
+																<li class="dropdown-item">研究生</li>
+																<li class="dropdown-item">博士</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												
+											</ul>
+										</dd>
+										<dd>
+											<input type="button" class="menu-btn" value="保存" ng-click="searchEnroll()" />
+											<input type="button" class="menu-btn" value="清除" ng-click="clearMenu($event)" />
+										</dd>
+									</dl>
+								</div>
+							</dt>
+							<dt class="operation-item">删除
+							</dt>
+							<dt class="operation-item">班级归档</dt>
+						</dl>
+					</div>
+					<div class="data-content" data-index="class-content">
+						<table class="data-table">
+							<tr>
+								<th></th>
+								<th>序号</th>
+								<th>班级名称</th>
+								<th>培训机构</th>
+								<th>培训专业</th>
+								<th>年届</th>
+								<th>班级人数</th>
+								<th>班级状态</th>
+								<th>就业人数</th>
+								<th>就业率</th>
+							</tr>
+						</table>
+						<dl class="page-list no-select">
+							<dt class="page-item page-info">总计<span id="totalRows">1</span>条记录，
+								<span id="currentPage">1</span>/<span id="totalPages"></span>页</dt>
+							<dt class="page-item page-operation">
+								<a name="prevBtn">上一页</a>
+								<a class="page-active">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a class="page-disable">4</a>
+								<a class="page-disable">5</a>
+								<a class="page-disable">6</a>
+								<a name="nextBtn">下一页</a>
+							</dt>
+						</dl>
+					</div>
+				</div>	
+				<div class="class-content hide-display" name="select-no-file" data-index="未归档">
+					<div class="operation-list">
+						<dl class="select-class" >
+							<dt class="operation-item">查询
+								<div id="searchClass" class="menu">
+									<h4 class="menu-title">未归档班级信息查询</h4>
+									<dl>
+										<dt class="">班级信息</dt>
+										<dd>
+											<ul class="condition-list">
+												<div class="condition-list-item">
+													<li class="label">班级编号：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item"><span id="classInfoId">1</span></li>
+															</ul>
+														</div>
+													</li>
+												</div>
+											
+												<div class="condition-list-item">
+													<li class="label">年届：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">机构名称：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">男</li>
+																<li class="dropdown-item">女</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">专业：</li>
+													<li class="condition">
+														<div name="education" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">专科</li>
+																<li class="dropdown-item">本科</li>
+																<li class="dropdown-item">研究生</li>
+																<li class="dropdown-item">博士</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												
+											</ul>
+										</dd>
+										<dd>
+											<input type="button" class="menu-btn" value="查询" ng-click="searchEnroll()" />
+											<input type="button" class="menu-btn" value="清除" ng-click="clearMenu($event)" />
+										</dd>
+									</dl>
+								</div>						
+							</dt>
+							<dt class="operation-item">班级归档</dt>
+						</dl>
+					</div>
+					<div class="data-content" data-index="select-no-file">
+						<table class="data-table">
+							<tr>
+								<th></th>
+								<th>序号</th>
+								<th>班级名称</th>
+								<th>培训机构</th>
+								<th>培训专业</th>
+								<th>年届</th>
+								<th>班级人数</th>
+								<th>班级状态</th>
+								<th>就业人数</th>
+								<th>就业率</th>
+							</tr>	
+						</table>
+						<dl class="page-list no-select">
+							<dt class="page-item page-info">总计<span id="totalRows">1</span>条记录，
+								<span id="currentPage">1</span>/<span id="totalPages"></span>页</dt>
+							<dt class="page-item page-operation">
+								<a name="prevBtn">上一页</a>
+								<a class="page-active">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a class="page-disable">4</a>
+								<a class="page-disable">5</a>
+								<a class="page-disable">6</a>
+								<a name="nextBtn">下一页</a>
+							</dt>
+						</dl>
+					</div>
+				</div>
+				<div class="class-content hide-display" name="select-done-file" data-index="已归档">
+					<div class="operation-list">
+						<dl class="select-class" >
+							<dt class="operation-item">查询
+								<div id="searchClass" class="menu">
+									<h4 class="menu-title">已归档班级信息查询</h4>
+									<dl>
+										<dt class="">班级信息</dt>
+										<dd>
+											<ul class="condition-list">
+												<div class="condition-list-item">
+													<li class="label">班级编号：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item"><span id="classInfoId">1</span></li>
+															</ul>
+														</div>
+													</li>
+												</div>
+											
+												<div class="condition-list-item">
+													<li class="label">年届：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">机构名称：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">男</li>
+																<li class="dropdown-item">女</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">专业：</li>
+													<li class="condition">
+														<div name="education" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">专科</li>
+																<li class="dropdown-item">本科</li>
+																<li class="dropdown-item">研究生</li>
+																<li class="dropdown-item">博士</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												
+											</ul>
+										</dd>
+										<dd>
+											<input type="button" class="menu-btn" value="查询" ng-click="searchEnroll()" />
+											<input type="button" class="menu-btn" value="清除" ng-click="clearMenu($event)" />
+										</dd>
+									</dl>
+								</div>
+							</dt>
+						</dl>
+					</div>
+					<div class="data-content" data-index="select-done-file">
+						<table class="data-table">
+							<tr>
+								<th></th>
+								<th>序号</th>
+								<th>班级名称</th>
+								<th>培训机构</th>
+								<th>培训专业</th>
+								<th>年届</th>
+								<th>班级人数</th>
+								<th>班级状态</th>
+								<th>就业人数</th>
+								<th>就业率</th>
+							</tr>	
+						</table>
+						<dl class="page-list no-select">
+							<dt class="page-item page-info">总计<span id="totalRows">1</span>条记录，
+								<span id="currentPage">1</span>/<span id="totalPages"></span>页</dt>
+							<dt class="page-item page-operation">
+								<a name="prevBtn">上一页</a>
+								<a class="page-active">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a class="page-disable">4</a>
+								<a class="page-disable">5</a>
+								<a class="page-disable">6</a>
+								<a name="nextBtn">下一页</a>
+							</dt>
+						</dl>
+					</div>
+				</div>
+				<div class="class-content hide-display" name="select-enquire" data-index="电话回访" >
+					<div class="operation-list">
+						<dl class="select-class" >
+							<dt class="operation-item">查询
+								<div id="searchClass" class="menu">
+									<h4 class="menu-title">回访信息查询</h4>
+									<dl>
+										<dt class="">回访信息</dt>
+										<dd>
+											<ul class="condition-list">
+												<div class="condition-list-item">
+													<li class="label">班级编号：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item"><span id="classInfoId">1</span></li>
+															</ul>
+														</div>
+													</li>
+												</div>
+											
+												<div class="condition-list-item">
+													<li class="label">年届：</li>
+													<li class="condition">
+														<input type="text" name="pid" value="" class="keyword" placeholder="年届" required="required" pattern="^[1-9]\d{3}$"/>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">机构名称：</li>
+													<li class="condition">
+														<div name="sex" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">男</li>
+																<li class="dropdown-item">女</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												<div class="condition-list-item">
+													<li class="label">专业：</li>
+													<li class="condition">
+														<div name="education" class="dropdown">
+															<span class="value">- 选择 -</span>
+															<i class="iconfont arrowhead">&#xe610;</i>
+															<ul class="dropdown-list">
+																<li class="dropdown-item">专科</li>
+																<li class="dropdown-item">本科</li>
+																<li class="dropdown-item">研究生</li>
+																<li class="dropdown-item">博士</li>
+															</ul>
+														</div>
+													</li>
+												</div>
+												
+												
+											</ul>
+										</dd>
+										<dd>
+											<input type="button" class="menu-btn" value="查询" ng-click="searchEnroll()" />
+											<input type="button" class="menu-btn" value="清除" ng-click="clearMenu($event)" />
+										</dd>
+									</dl>
+								</div>
+							</dt>`
+						</dl>
+					</div>
+					<div class="data-content" data-index="select-enquire">
+						<table class="data-table">
+							<tr>
+								
+								<th>序号</th>
+								<th>班级名称</th>
+								<th>培训机构</th>
+								<th>培训专业</th>
+								<th>年届</th>
+								<th>回访人数</th>
+								<th>回访率</th>
+								<th>合格率</th>
+								<th>回访记录</th>
+								<th>操作</th>
+							</tr>	
+						</table>
+						<dl class="page-list no-select">
+							<dt class="page-item page-info">总计<span id="totalRows">1</span>条记录，
+								<span id="currentPage">1</span>/<span id="totalPages"></span>页</dt>
+							<dt class="page-item page-operation">
+								<a name="prevBtn">上一页</a>
+								<a class="page-active">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a class="page-disable">4</a>
+								<a class="page-disable">5</a>
+								<a class="page-disable">6</a>
+								<a name="nextBtn">下一页</a>
+							</dt>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../../js/jquery-2.1.4.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../js/angular.min.js" type="text/javascript"  charset="UTF-8"></script>
+		<script src="../../js/angular-route.min.js" type="text/javascript"  charset="UTF-8"></script>
+		<script src="../../js/plugin/toastr.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../js/pid.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../js/permission.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../js/tab_wjc.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="../../js/plugin/dropdown_wjc.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="class_list.js" type="text/javascript" charset="UTF-8"></script>
+	</body>
+</html>
